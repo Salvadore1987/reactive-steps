@@ -1,7 +1,6 @@
 package uz.salvadore.learn.reactive.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -13,10 +12,9 @@ import uz.salvadore.learn.reactive.repository.UserRepository;
 import java.util.Objects;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class ReactiveUserService implements ReactiveCrudService<User> {
 
-    @Autowired
     private UserRepository repository;
 
     // TODO Create a Flux for reading all users from the blocking repository deferred until the flux is subscribed,
