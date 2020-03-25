@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@//192.168.0.184:1521/DBNEW
+    username: asbt
+    password: asbt32
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 8
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    database-platform: org.hibernate.dialect.Oracle9iDialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      temp:
+        use_jdbc_metadata_defaults: false
+      jdbc:
+        time_zone: Asia/Tashkent
+server:
+  port: 8081
